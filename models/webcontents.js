@@ -9,7 +9,7 @@ const WebcontentsSchema = new Schema({
     content:    { type: String },
     urlText:    { type: String },
     url:        { type: String },
-    imagesrc:   { type: String }
+    imgsrc:     { type: String }
 })
 
 const MyModel = mongoose.model('webcontents', WebcontentsSchema)

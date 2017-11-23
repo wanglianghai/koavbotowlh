@@ -8,6 +8,7 @@ html
         script(src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js")
         script(src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js")
     body
+        //NAVBAR
         nav.navbar.navbar-fixed-top.navbar-default(style="background-color:white")
             .container
                 .navbar-header
@@ -17,7 +18,7 @@ html
                 .navbar-collapse.collapse(id='navbar')
                     ul.nav.navbar-nav.navbar-right
                         each nav in navs
-                            li.media
+                            li.media(style='margin-top: 15px')
                                 a(href=`${nav.url}`)
                                     p= nav.urlText
         div(style='padding-top: 30px')

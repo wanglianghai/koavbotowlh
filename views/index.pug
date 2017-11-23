@@ -1,4 +1,30 @@
 extends layout
 
 block content
-  p 11
+  //CAROUSEL
+  .carousel.slide(id='myCarousel' data-ride='carousel')
+    //indicators
+    ol.carousel-indicators
+      - for (let i = 0; i < indexs.length; i++)
+        if i
+          li(data-target='#myCarousel' data-slide-to=`${i}`)
+        else
+          li.active(data-target='#myCarousel' data-slide-to=`${i}`)
+
+    //wrapper for slides
+    .carousel-inner(role='listbox')
+      - for (let i = 0; i < indexs.length; i++)
+        if i
+          .item
+            img(src=`${indexs[i].imgsrc}` alt='Second slide')
+        else
+          .item.active
+            img(src=`${indexs[i].imgsrc}` alt='First slide')
+
+    //Controls
+    a.left.carousel-control(href='#myCarousel' role='button' data-slide='prev')
+      span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+      span.sr-only Previous
+    a.right.carousel-control(href='#myCarousel' role='button' data-slide='next')
+      span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+      span.sr-only Next
