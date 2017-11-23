@@ -1,9 +1,11 @@
 const router = require('koa-router')()
+const mongoose = require('mongoose')
 
-router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Hello Koa 2!'
-  })
+const WebContents = mongoose.model('webcontents')
+
+router.get('/', async ctx => {
+  await WebContents.find({type: "navi"})
+      .then(navs => ctx.render('index', {navs}))
 })
 
 router.get('/string', async (ctx, next) => {

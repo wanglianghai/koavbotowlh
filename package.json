@@ -19,9 +19,11 @@
     "koa-router": "^7.1.1",
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
+    "mongoose": "^4.13.4",
     "pug": "^2.0.0-rc.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "nodemon": "^1.8.1"
   }
 }

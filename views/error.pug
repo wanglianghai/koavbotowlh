@@ -1,6 +1,10 @@
-extends layout
-
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+doctype html
+html
+  head
+    title 运宝通
+    link(rel="icon" type="image/png" href="images/favicon.ico")
+    link(rel='stylesheet' href='/stylesheets/style.css')
+  body
+    h1= message
+    h2= error.status
+    pre #{error.stack}
