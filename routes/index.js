@@ -6,9 +6,10 @@ const WebContents = mongoose.model('webcontents')
 router.get('/', async ctx => {
   await Promise.all([
                     WebContents.find({type: 'navi'}),
-                    WebContents.find({type: 'index'})
+                    WebContents.find({type: 'index'}),
+                    WebContents.find({type: 'product'}).limit(3)
                     ])
-      .then(([navs, indexs]) => ctx.render('index', {navs, indexs}))
+      .then(([navs, indexs, products]) => ctx.render('index', {navs, indexs, products}))
 })
 
 router.get('/string', async (ctx, next) => {
