@@ -6,3 +6,27 @@ body {
 a {
   color: #00B7FF;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.feature-header {
+  padding-top: 30px;
+}
+
+.about {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.foreground {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  z-index: 2;
+  background-color: black;
+  opacity: 0.5;
+}

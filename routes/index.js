@@ -7,9 +7,11 @@ router.get('/', async ctx => {
   await Promise.all([
                     WebContents.find({type: 'navi'}),
                     WebContents.find({type: 'index'}),
-                    WebContents.find({type: 'product'}).limit(3)
+                    WebContents.find({type: 'product'}).limit(3),
+                    WebContents.find({type: 'about'})
                     ])
-      .then(([navs, indexs, products]) => ctx.render('index', {navs, indexs, products}))
+      .then(([navs, indexs, products, about]) =>
+          ctx.render('index', {navs, indexs, products, about}))
 })
 
 router.get('/string', async (ctx, next) => {
